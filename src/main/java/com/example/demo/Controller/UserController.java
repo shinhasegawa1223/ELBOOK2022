@@ -38,7 +38,7 @@ public class UserController {
 
 	//ユーザーを作成画面へ移動
 	@GetMapping("/createview")
-	public String userCreate(Model model) {
+	public String moveCreateView(Model model) {
 		return "usercreate";
 	}
 
@@ -50,7 +50,7 @@ public class UserController {
 		return "redirect:info";
 	}
 
-	//ユーザーの編集反映処理  処理反映未実装
+	//ユーザーの編集反映処理
 	@PostMapping("/useredit")
 	public String userEdit(@ModelAttribute("editUser") UserList userList) {
 		//System.out.println(userList);
