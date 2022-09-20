@@ -1,4 +1,16 @@
 
+
+ここはメモに使う
+
+
+
+
+
+
+
+
+
+
 const id = null;
 
 $('#delete-btn').on('click', function(e){
@@ -169,7 +181,7 @@ delete from EL_user
 
 
 UPDATE EL_USER
-SET 
+SET
 
 user_name = 'name',
 mail = 'mail',
