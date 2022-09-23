@@ -14,24 +14,24 @@ public class UserService {
 	@Autowired
 	UserMapper userMapper;
 
-	public List<UserList> lists() {
-		return userMapper.userlists();
+	public List<UserList> findUser() {
+		return userMapper.findUser();
 	}
 
-	public List<UserList> targetuser(int user_id) {
-		return userMapper.targetuser(user_id);
+	public List<UserList> targetUser(int user_id) {
+		return userMapper.targetUser(user_id);
 	}
 
-	public void create(UserList userList) {
-		userMapper.create(userList);
+	public void userCreate(UserList userList) {
+		userMapper.userCreate(userList);
 	}
 
-	public void edit(UserList userList) {
-		userMapper.edit(userList);
+	public void userEdit(UserList userList) {
+		userMapper.userEdit(userList);
 	}
 
-	public void delete(UserList userList) {
-		userMapper.delete(userList);
+	public void userDelete(UserList userList) {
+		userMapper.userDelete(userList);
 	}
 
 }

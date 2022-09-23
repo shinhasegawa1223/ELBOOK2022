@@ -26,7 +26,7 @@
 								<td th:text="${user.user_name}"></td>
 								<td th:text="${user.mail}"></td>
 								<td th:text="${user.create_time}"></td>
-								<td><a th:href="@{/user/edit/{user_id}(user_id=*{user.user_id})}" class="btn btn-primary">Edit</a></td>
+								<td><a th:href="@{/user/editview/{user_id}(user_id=*{user.user_id})}" class="btn btn-primary">Edit</a></td>
 								<td>
 										<button type="button" class="btn btn-danger" onclick="delinfo(this.value)" th:value="${user.user_id}" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
 								</td>
@@ -36,7 +36,7 @@
 		<!-- modal -->
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
-						<form th:action="@{/user/delete}" th:object="${deleteUser}" method="post">
+						<form th:action="@{/user/userdelete}" th:object="${deleteUser}" method="post">
 								<div class="modal-content">
 										<div class="modal-header">
 												<h5 class="modal-title" id="exampleModalLabel">warning</h5>

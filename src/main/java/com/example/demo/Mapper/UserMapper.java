@@ -9,14 +9,14 @@ import com.example.demo.Entity.UserList;
 @Mapper
 public interface UserMapper {
 
-	List<UserList> userlists();
+	List<UserList> findUser();
 
-	List<UserList> targetuser(int user_id);
+	List<UserList> targetUser(int user_id);
 
-	void create(UserList userList);
+	void userCreate(UserList userList);
 
-	void edit(UserList userList);
+	void userEdit(UserList userList);
 
-	void delete(UserList userList);
+	void userDelete(UserList userList);
 
 }

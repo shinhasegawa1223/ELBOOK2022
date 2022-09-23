@@ -10,33 +10,32 @@
 	</resultMap>
 
 	<!-- *あとで編集 -->
-	<select id="userlists" resultMap="Base_Result_Map">
+	<select id="findUser" resultMap="Base_Result_Map">
 		SELECT * FROM EL_USER
 	</select>
 
 	<!-- *あとで編集 -->
-	<select id="targetuser" resultMap="Base_Result_Map"
+	<select id="targetUser" resultMap="Base_Result_Map"
 		parameterType="com.example.demo.Entity.UserList">
 		SELECT * FROM EL_USER WHERE user_id =#{user_id};
 	</select>
 
-	<delete id="delete"
+	<insert id="userCreate"
+		parameterType="com.example.demo.Entity.UserList">
+		INSERT INTO EL_USER(user_name, mail, pass, create_time)
+		VALUES(#{user_name}, #{mail}, #{pass}, now());
+	</insert>
+
+	<update id="userEdit"
+		parameterType="com.example.demo.Entity.UserList">
+		UPDATE EL_USER SET user_name =#{user_name}, mail
+		=#{mail}, pass=#{pass}, update_time = now()
+		WHERE user_id =#{user_id};
+	</update>
+
+	<delete id="userDelete"
 		parameterType="com.example.demo.Entity.UserList">
 		DELETE FROM EL_USER
 		WHERE user_id =#{user_id};
 	</delete>
-
-	<insert id="create"
-		parameterType="com.example.demo.Entity.UserList">
-		INSERT INTO EL_USER(user_name, mail, pass)
-		VALUES(#{user_name}, #{mail}, #{pass});
-	</insert>
-
-	<update id="edit"
-		parameterType="com.example.demo.Entity.UserList">
-		UPDATE EL_USER SET user_name =#{user_name}, mail
-		=#{mail}, pass=#{pass}
-		WHERE user_id =#{user_id};
-	</update>
-
 </mapper>

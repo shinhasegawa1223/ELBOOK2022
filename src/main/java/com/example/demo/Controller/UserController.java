@@ -25,14 +25,14 @@ public class UserController {
 	//アクセス時にユーザーを一覧で取得
 	@GetMapping("/info")
 	public String findUser(Model model) {
-		model.addAttribute("UserList", userService.lists());
+		model.addAttribute("UserList", userService.findUser());
 		return "userinfo";
 	}
 
 	//ユーザーの編集
-	@GetMapping("/edit/{user_id}")
-	public String userEdit(@PathVariable int user_id, Model model) {
-		model.addAttribute("TargetUser", userService.targetuser(user_id));
+	@GetMapping("/editview/{user_id}")
+	public String moveEditView(@PathVariable int user_id, Model model) {
+		model.addAttribute("TargetUser", userService.targetUser(user_id));
 		return "useredit";
 	}
 
@@ -46,7 +46,7 @@ public class UserController {
 	@PostMapping("/usercreate")
 	public String userCreate(@ModelAttribute("createUser") UserList userList) {
 		//System.out.println(userList);
-		userService.create(userList);
+		userService.userCreate(userList);
 		return "redirect:info";
 	}
 
@@ -54,15 +54,15 @@ public class UserController {
 	@PostMapping("/useredit")
 	public String userEdit(@ModelAttribute("editUser") UserList userList) {
 		//System.out.println(userList);
-		userService.edit(userList);
+		userService.userEdit(userList);
 		return "redirect:info";
 	}
 
 	//ユーザーの削除処理
-	@PostMapping("/delete")
+	@PostMapping("/userdelete")
 	public String userDelete(@ModelAttribute("deleteUser") UserList userList) {
 		//System.out.println(userList);
-		userService.delete(userList);
+		userService.userDelete(userList);
 		return "redirect:info";
 	}
 
