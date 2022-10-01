@@ -5,7 +5,7 @@
 
 | No   |     カラム名     |   データ型  | Not Null| デフォルト|備考 |
 | ---  | -------------- | --------- | --------| ------ |--- |
-| 1    |user_id         |    int    | ●       |        |auto_increment    |
+| 1    |user_id         |    int    | ●       |        |auto_increment,primarykey    |
 | 2    |user_name       |varchar(30)| ●       |        |    |
 | 3    |mail            |varchar(60)| ●       |        |    |
 | 4    |pass            |varchar(20)| ●       |   9999 |    |
