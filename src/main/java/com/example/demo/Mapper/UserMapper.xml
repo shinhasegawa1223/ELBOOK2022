@@ -29,7 +29,7 @@
 	<update id="userEdit"
 		parameterType="com.example.demo.Entity.UserList">
 		UPDATE EL_USER SET user_name =#{user_name}, mail
-		=#{mail}, pass=#{pass}, update_time = now()
+		=#{mail}, pass=#{pass}
 		WHERE user_id =#{user_id};
 	</update>
 

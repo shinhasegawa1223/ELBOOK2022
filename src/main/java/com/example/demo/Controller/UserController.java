@@ -23,10 +23,13 @@ public class UserController {
 	UserService userService;
 
 	//アクセス時にユーザーを一覧で取得
-	@GetMapping("/info")
+	@GetMapping("/list")
+	//Modelのクラスをインスタンス化 Model model
 	public String findUser(Model model) {
+		//コントローラからビューに値を渡す
+		//modelクラスのaddAttributeメソッドを使用する
 		model.addAttribute("UserList", userService.findUser());
-		return "userinfo";
+		return "userlist";
 	}
 
 	//ユーザーの編集
@@ -34,6 +37,12 @@ public class UserController {
 	public String moveEditView(@PathVariable int user_id, Model model) {
 		model.addAttribute("TargetUser", userService.targetUser(user_id));
 		return "useredit";
+	}
+
+	@GetMapping("/delete/{user_id}")
+	public String delete(@PathVariable int user_id, Model model) {
+		userService.userDelete(user_id);
+		return "redirect:/user/list";
 	}
 
 	//ユーザーを作成画面へ移動
@@ -47,7 +56,7 @@ public class UserController {
 	public String userCreate(@ModelAttribute("createUser") UserList userList) {
 		//System.out.println(userList);
 		userService.userCreate(userList);
-		return "redirect:info";
+		return "redirect:/user/list";
 	}
 
 	//ユーザーの編集反映処理
@@ -55,15 +64,6 @@ public class UserController {
 	public String userEdit(@ModelAttribute("editUser") UserList userList) {
 		//System.out.println(userList);
 		userService.userEdit(userList);
-		return "redirect:info";
+		return "redirect:list";
 	}
-
-	//ユーザーの削除処理
-	@PostMapping("/userdelete")
-	public String userDelete(@ModelAttribute("deleteUser") UserList userList) {
-		//System.out.println(userList);
-		userService.userDelete(userList);
-		return "redirect:info";
-	}
-
 }

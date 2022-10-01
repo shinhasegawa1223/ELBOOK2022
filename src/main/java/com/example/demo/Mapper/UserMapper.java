@@ -17,6 +17,6 @@ public interface UserMapper {
 
 	void userEdit(UserList userList);
 
-	void userDelete(UserList userList);
+	void userDelete(int user_id);
 
 }
