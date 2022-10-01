@@ -10,5 +10,5 @@
 | 3    |mail            |varchar(60)| ●       |        |    |
 | 4    |pass            |varchar(20)| ●       |   9999 |    |
 | 5    |create_time     | timestamp | ●       |        |    |
-| 6    |delete_flg      | timestamp | ●       |0        |0:初期値　１：削除    |
+| 6    |delete_flg      | timestamp | ●       |0        |0:初期値　1:削除    |
 
