@@ -28,7 +28,7 @@ CREATE  TABLE EL_USER  (
   , mail varchar(60) not null
   , pass varchar(20) default '9999' not null
   , create_time timestamp
-  , delete_flg boolean
+  , delete_flg boolean default 0 not null
  ) ;
 
  
