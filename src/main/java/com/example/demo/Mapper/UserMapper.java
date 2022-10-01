@@ -9,6 +9,7 @@ import com.example.demo.Entity.UserList;
 @Mapper
 public interface UserMapper {
 
+	//Listを使用してあたいを格納する　引数は無し
 	List<UserList> findUser();
 
 	List<UserList> targetUser(int user_id);
@@ -17,6 +18,6 @@ public interface UserMapper {
 
 	void userEdit(UserList userList);
 
-	void userDelete(int user_id);
+	void deleteUser(int user_id);
 
 }

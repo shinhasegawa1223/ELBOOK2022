@@ -9,15 +9,17 @@
 		<id column="user_id" property="user_id" jdbcType="INTEGER" />
 	</resultMap>
 
-	<!-- *あとで編集 -->
+	<!-- idにMapperクラスのメソッドを指定する -->
+
 	<select id="findUser" resultMap="Base_Result_Map">
-		SELECT * FROM EL_USER
+		SELECT user_id, user_name, mail,
+		pass, create_time FROM EL_USER
 	</select>
 
-	<!-- *あとで編集 -->
 	<select id="targetUser" resultMap="Base_Result_Map"
 		parameterType="com.example.demo.Entity.UserList">
-		SELECT * FROM EL_USER WHERE user_id =#{user_id};
+		SELECT user_id, user_name, mail, pass, create_time FROM
+		EL_USER WHERE user_id =#{user_id};
 	</select>
 
 	<insert id="userCreate"
@@ -33,7 +35,7 @@
 		WHERE user_id =#{user_id};
 	</update>
 
-	<delete id="userDelete"
+	<delete id="deleteUser"
 		parameterType="com.example.demo.Entity.UserList">
 		DELETE FROM EL_USER
 		WHERE user_id =#{user_id};

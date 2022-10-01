@@ -12,9 +12,12 @@ import com.example.demo.Mapper.UserMapper;
 public class UserService {
 
 	@Autowired
+	//クラス名　インスタンス化
 	UserMapper userMapper;
 
+	// リストを作成　returnを使用して戻り値を取得する
 	public List<UserList> findUser() {
+		//UserMapperクラスのfindUserを使用する　引数は無し
 		return userMapper.findUser();
 	}
 
@@ -30,8 +33,8 @@ public class UserService {
 		userMapper.userEdit(userList);
 	}
 
-	public void userDelete(int user_id) {
-		userMapper.userDelete(user_id);
+	public void deleteUser(int user_id) {
+		userMapper.deleteUser(user_id);
 	}
 
 }

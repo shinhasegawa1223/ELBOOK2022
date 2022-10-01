@@ -12,10 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.Entity.UserList;
 import com.example.demo.Service.UserService;
 
-import lombok.Data;
-
 @Controller
-@Data
 @RequestMapping("/user")
 public class UserController {
 
@@ -38,10 +35,9 @@ public class UserController {
 		model.addAttribute("TargetUser", userService.targetUser(user_id));
 		return "useredit";
 	}
-
 	@GetMapping("/delete/{user_id}")
-	public String delete(@PathVariable int user_id, Model model) {
-		userService.userDelete(user_id);
+	public String deleteUser(@PathVariable int user_id, Model model) {
+		userService.deleteUser(user_id);
 		return "redirect:/user/list";
 	}
 
@@ -64,6 +60,6 @@ public class UserController {
 	public String userEdit(@ModelAttribute("editUser") UserList userList) {
 		//System.out.println(userList);
 		userService.userEdit(userList);
-		return "redirect:list";
+		return "redirect:/user/list";
 	}
 }
