@@ -18,6 +18,6 @@ public interface UserMapper {
 
 	void userEdit(UserList userList);
 
-	void deleteUser(int user_id);
+	void userDelete(int user_id);
 
 }

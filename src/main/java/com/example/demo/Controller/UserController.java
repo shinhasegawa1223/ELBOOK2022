@@ -36,14 +36,14 @@ public class UserController {
 		return "useredit";
 	}
 	@GetMapping("/delete/{user_id}")
-	public String deleteUser(@PathVariable int user_id, Model model) {
-		userService.deleteUser(user_id);
+	public String userDelete(@PathVariable int user_id) {
+		userService.userDelete(user_id);
 		return "redirect:/user/list";
 	}
 
 	//ユーザーを作成画面へ移動
 	@GetMapping("/createview")
-	public String moveCreateView(Model model) {
+	public String moveCreateView() {
 		return "usercreate";
 	}
 

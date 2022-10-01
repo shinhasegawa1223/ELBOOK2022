@@ -33,8 +33,8 @@ public class UserService {
 		userMapper.userEdit(userList);
 	}
 
-	public void deleteUser(int user_id) {
-		userMapper.deleteUser(user_id);
+	public void userDelete(int user_id) {
+		userMapper.userDelete(user_id);
 	}
 
 }
