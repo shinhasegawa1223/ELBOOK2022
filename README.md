@@ -31,5 +31,14 @@ CREATE  TABLE EL_USER  (
   , delete_flg boolean default 0 not null
  ) ;
 
- 
+  CREATE  TABLE EL_BOOK (
+ book_id int(4) auto_increment not null primary key
+,book_name varchar(60) not null
+,book_author varchar(30) not null
+,book_publisher varchar(30) not null
+,book_releasetime date
+,create_time timestamp
+,update_time datetime
+) ;
+
  ```
