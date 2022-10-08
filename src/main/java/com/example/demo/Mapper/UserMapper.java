@@ -14,10 +14,10 @@ public interface UserMapper {
 
 	List<UserList> targetUser(int user_id);
 
-	void userCreate(UserList userList);
+	void createUser(UserList userList);
 
-	void userEdit(UserList userList);
+	void editUser(UserList userList);
 
-	void userDelete(int user_id);
+	void deleteUser(int user_id);
 
 }

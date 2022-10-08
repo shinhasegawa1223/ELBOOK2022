@@ -25,16 +25,16 @@ public class UserService {
 		return userMapper.targetUser(user_id);
 	}
 
-	public void userCreate(UserList userList) {
-		userMapper.userCreate(userList);
+	public void createUser(UserList userList) {
+		userMapper.createUser(userList);
 	}
 
-	public void userEdit(UserList userList) {
-		userMapper.userEdit(userList);
+	public void editUser(UserList userList) {
+		userMapper.editUser(userList);
 	}
 
-	public void userDelete(int user_id) {
-		userMapper.userDelete(user_id);
+	public void deleteUser(int user_id) {
+		userMapper.deleteUser(user_id);
 	}
 
 }
