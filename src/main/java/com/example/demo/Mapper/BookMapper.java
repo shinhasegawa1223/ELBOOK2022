@@ -13,10 +13,10 @@ public interface BookMapper {
 
 	List<BookList> targetBook(int book_id);
 
-	void bookCreate(BookList bookList);
+	void createBook(BookList bookList);
 
-	void bookEdit(BookList bookList);
+	void editBook(BookList bookList);
 
-	void bookDelete(int book_id);
+	void deleteBook(int book_id);
 
 }

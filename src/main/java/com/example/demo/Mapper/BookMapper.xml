@@ -20,19 +20,19 @@
 		SELECT * FROM EL_BOOK WHERE book_id =#{book_id};
 	</select>
 
-	<insert id="bookCreate"
+	<insert id="createBook"
 		parameterType="com.example.demo.Entity.BookList">
 		INSERT INTO EL_BOOK(book_name, book_author, book_publisher, book_releasetime, create_time)
 		VALUES(#{book_name}, #{book_author}, #{book_publisher}, #{book_releasetime}, now());
 	</insert>
 
-	<update id="bookEdit"
+	<update id="editBook"
 		parameterType="com.example.demo.Entity.BookList">
 		UPDATE EL_BOOK SET book_name =#{book_name}, book_author=#{book_author}, book_publisher=#{book_publisher}, book_releasetime=#{book_releasetime}, update_time =now()
 		WHERE book_id =#{book_id};
 	</update>
 
-	<delete id="bookDelete"
+	<delete id="deleteBook"
 		parameterType="com.example.demo.Entity.BookList">
 		DELETE FROM EL_BOOK
 		WHERE book_id =#{book_id};

@@ -23,10 +23,10 @@ public class BookController {
 	BookService bookService;
 
 	//アクセス時にユーザーを一覧で取得
-	@GetMapping("/info")
+	@GetMapping("/list")
 	public String findBook(Model model) {
 		model.addAttribute("BookList", bookService.findBook());
-		return "bookinfo";
+		return "booklist";
 	}
 
 	//ユーザーの編集
@@ -44,25 +44,25 @@ public class BookController {
 
 	//ユーザーを作成処理
 	@PostMapping("/bookcreate")
-	public String bookCreate(@ModelAttribute("createBook") BookList bookList) {
+	public String createBook(@ModelAttribute("createBook") BookList bookList) {
 		//System.out.println(bookList);
-		bookService.bookCreate(bookList);
+		bookService.createBook(bookList);
 		return "redirect:/book/info";
 	}
 
 	//ユーザーの編集反映処理
 	@PostMapping("/bookedit")
-	public String bookEdit(@ModelAttribute("editBook") BookList bookList) {
+	public String editBook(@ModelAttribute("editBook") BookList bookList) {
 		System.out.println(bookList);
-		bookService.bookEdit(bookList);
+		bookService.editBook(bookList);
 		return "redirect:/book/info";
 	}
 
 	//ユーザーの削除処理
 	@GetMapping("/bookdelete/{book_id}")
-	public String bookDelete(@PathVariable int book_id) {
+	public String deleteBook(@PathVariable int book_id) {
 		//System.out.println(book_id);
-		bookService.bookDelete(book_id);
+		bookService.deleteBook(book_id);
 		return "redirect:/book/info";
 	}
 

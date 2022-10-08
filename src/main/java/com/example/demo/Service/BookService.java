@@ -22,16 +22,16 @@ public class BookService {
 		return bookMapper.targetBook(book_id);
 	}
 
-	public void bookCreate(BookList bookList) {
-		bookMapper.bookCreate(bookList);
+	public void createBook(BookList bookList) {
+		bookMapper.createBook(bookList);
 	}
 
-	public void bookEdit(BookList bookList) {
-		bookMapper.bookEdit(bookList);
+	public void editBook(BookList bookList) {
+		bookMapper.editBook(bookList);
 	}
 
-	public void bookDelete(int book_id) {
-		bookMapper.bookDelete(book_id);
+	public void deleteBook(int book_id) {
+		bookMapper.deleteBook(book_id);
 	}
 
 }
