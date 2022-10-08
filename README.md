@@ -41,4 +41,13 @@ CREATE  TABLE EL_USER  (
 ,update_time datetime
 ) ;
 
+
+
+ CREATE  TABLE RENTAL (
+ id int(12) auto_increment not null primary key
+, user_id int(4)  not null
+, book_id int(4)  not null
+, lending_day DATE not null
+, return_day DATE not null
+) ;
  ```
