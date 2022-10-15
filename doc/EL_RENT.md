@@ -8,10 +8,9 @@
 
 | No   |     カラム名     |   データ型  | Not Null| デフォルト|備考 |
 | ---  | -------------- | --------- | --------| ------ |--------------------------|
-| 1    |book_id         |    int    | ●       |        |auto_increment primary key|
-| 2    |book_name       |varchar(60)| ●       |        |                          |
-| 3    |book_author     |varchar(30)| ●       |        |                          |
-| 4    |book_publisher  |varchar(30)| ●       |        |                          |
-| 5    |book_releasetime|   date    | ●       |        |                          |
-| 6    |create_time     | timestamp | ●       |        |                          |
-| 7    |update_time     | datetime  | ●       |        |                          |
+| 1    |rent_id         |   int      | ●       |        |auto_increment primary key|
+| 2    |user_id         |    int     | ●       |        |                          |
+| 3    |book_id         |  int       | ●       |        |                          |
+| 4    |rent_day        | timestamp |  ●       |        |                          |
+| 5    |return_day      |  timestamp  | ●      |        |                          |
+| 6    |dlt_flg          | bollean | ●       |         |      rent,return,          |
