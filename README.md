@@ -43,11 +43,12 @@ CREATE  TABLE EL_USER  (
 
 
 
- CREATE  TABLE RENTAL (
- id int(12) auto_increment not null primary key
+ CREATE  TABLE EL_RENT (
+ rent_id int(12) auto_increment not null primary key
 , user_id int(4)  not null
 , book_id int(4)  not null
-, lending_day DATE not null
-, return_day DATE not null
+, rent_day timestamp not null
+, return_day timestamp not null
+, dlt_flg boolean default 0 not null
 ) ;
  ```
