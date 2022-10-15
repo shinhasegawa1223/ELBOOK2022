@@ -12,4 +12,4 @@
 | 3    |book_id         |  int       | ●       |        |                          |
 | 4    |rent_day        | timestamp |  ●       |        |                          |
 | 5    |return_day      |  timestamp  | ●      |        |                          |
-| 6    |dlt_flg          | bollean | ●       |         |      rent,return,          |
+| 6    |dlt_flg          | bollean | ●       |  0       |      rent,return,          |
