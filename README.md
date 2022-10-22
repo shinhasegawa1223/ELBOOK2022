@@ -47,8 +47,8 @@ CREATE  TABLE EL_USER  (
  rent_id int(12) auto_increment not null primary key
 , user_id int(4)  not null
 , book_id int(4)  not null
-, rent_day timestamp not null
-, return_day timestamp not null
+, rent_day timestamp 
+, return_day timestamp
 , dlt_flg boolean default 0 not null
 ) ;
  ```
